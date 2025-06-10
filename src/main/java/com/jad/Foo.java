@@ -7,6 +7,7 @@ import java.util.List;
 public class Foo {
     private final Bar bar;
     private final ArrayList<Baz> bazs = new ArrayList<>();
+    private final Qux qux = new Qux();
 
     public Foo(final Bar bar) {
         this.bar = bar;
