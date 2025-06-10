@@ -8,9 +8,24 @@ public class Foo {
     private final Bar bar;
     private final ArrayList<Baz> bazs = new ArrayList<>();
     private final Qux qux = new Qux();
+    private Corge corge;
 
     public Foo(final Bar bar) {
         this.bar = bar;
+    }
+
+    public Corge getCorge() {
+        return this.corge;
+    }
+
+    public void setCorge(final Corge corge) {
+        if (this.corge != null) {
+            this.corge.setFoo(null);
+        }
+        this.corge = corge;
+        if (this.corge.getFoo() != this) {
+            this.corge.setFoo(this);
+        }
     }
 
     public Bar getBar() {
